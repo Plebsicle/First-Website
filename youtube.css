@@ -1,0 +1,351 @@
+/*1.Block elements : Take up the entire line in their container regardless of the space taken by them
+    2. Inline-Block elements : only take up as much space as neeeded
+    3. Inline elements : present within  a line of text
+    paragraph tags are block elements and take upthe entire line
+    images and search box are inline-block elements
+*/
+/* Inheritance means if u set a property to a outside div , the property will be passed down to the 
+all the elements present inside. these properties include text properties like color , underline etc
+*/
+p {
+  font-family: Roboto, Arial;
+}
+.thumbnail {
+  width: 100%;
+}
+.search-bar {
+  display: block;
+
+}
+.video-info-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+
+.profile-pic {
+  width: 50px;
+  vertical-align: top;
+}
+.video-title {
+  margin-top: 0px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.video-properties {
+  width: 200px;
+}
+.thumbail-row {
+  margin-bottom: 12px;
+}
+.photo {
+  width: 40px;
+  border-radius: 50px;
+}
+.author {
+  font-size: 12px;
+  color: grey;
+}
+.video-stats {
+  font-size: 12px;
+  color: grey;
+  margin-top: 0px;
+}
+.video-author {
+  margin-top: -5px;
+  margin-bottom: 3px;
+}
+.mega-video-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 40px;
+  background-color: rgb(255, 255, 255);
+}
+@media (max-width:750px) {
+  .mega-video-container{
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+@media (min-width:751px) and (max-width:999px){
+  .mega-video-container{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width:1000px){
+  .mega-video-container{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+.header{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 55px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(234, 230, 230);
+  justify-content: space-between;
+  position:fixed;
+  background-color: white;
+  z-index: 100;
+  top:0;
+  right:0;
+  left:0;
+}
+.left{
+  width: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+}
+.center{
+  flex:1;
+  margin:0;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.right{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+body{
+  margin:0;
+  padding-top:80px;
+  padding-left:96px;
+  padding-right:24px;
+  background-color: rgb(248,248,248);
+}
+.youtube-logo{
+height: 20px;
+}
+.hamburger{
+height: 24px;
+margin-left:24px;
+margin-right:20px;  
+}
+.voice-search{
+  height:24px;
+  
+}
+.search-img{
+  height:24px;
+  
+}
+.search{
+  height:37px;
+  flex:1;
+  max-width: 500px;
+  font-size:14px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(192,192,192);
+  border-radius: 2px;
+  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.05);
+ 
+}
+.search::placeholder{
+  padding-left : 10px;
+  font-family: Robota,arial;
+  font-size: 14px;
+}
+.search-button{
+  height:40px;
+  background-color: lightgray;
+  border-style: solid;
+  border-color:lightgray;
+  border-width:1px;
+  width: 60px;
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.voice-search-button{
+  width: 60px;
+  background-color: lightgray;
+  margin-left:25px;
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.voice-search-button:hover .search-tooltip{
+  opacity:1;
+}
+.search-tooltip{
+  color:white;
+  position:absolute;
+  font-size:12px;
+  background-color: gray;
+  padding-top:8px;
+  padding-bottom:8px;
+  padding-left:4px;
+  padding-right:4px;
+  border-radius:2px;
+  bottom:-30px;
+  opacity:0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+  font-family:Roboto,arial;
+}
+.right-tooltip{
+  color:white;
+  position:absolute;
+  font-size:12px;
+  background-color: gray;
+  padding-top:8px;
+  padding-bottom:8px;
+  padding-left:4px;
+  padding-right:4px;
+  border-radius:2px;
+  bottom:-30px;
+  opacity:0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  white-space: nowrap;
+  font-family:Roboto,arial;
+}
+.youtube-apps-container{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.youtube-apps-container:hover .right-tooltip{
+  
+opacity:1;
+}
+.notification-icon-container{
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification-icon-container:hover .right-tooltip{
+  opacity:1;
+}
+.search-button:hover .search-tooltip{
+  opacity:1;
+}
+.voice-search-button{
+  height:40px;
+  background-color: rgb(192,192,192);
+  border:none;
+  width: 40px;
+  border-radius: 20px;
+  
+}
+.upload-icon{
+  height: 24px;
+  
+}
+.youtube-apps{
+  height: 24px;
+}
+.notification-icon{
+  height: 24px;   
+}
+.channel-icon{
+  height: 24px;
+}
+.side-bar{
+  position:fixed;
+  left:0;bottom:0;top:50px;width:72px;
+  background-color: white;
+  z-index: 200;
+  padding-top:5px;
+}
+.sidebar-home{
+  height:76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor:pointer;
+}
+.sidebar-home:hover{
+  background-color: lightgray;
+}
+.home-icon{
+  height: 24px;
+  margin-bottom:7px;
+}
+.explore-icon{
+  height: 24px;
+  margin-bottom:7px;
+ 
+}
+.subscriptions-icon{
+  height: 24px;
+  margin-bottom:7px;
+ 
+}
+.originals-icon{
+  height: 24px;
+  margin-bottom:7px;
+ 
+}
+
+.youtube-music-icon{
+  height: 24px;
+  margin-bottom:7px;
+
+}
+.library-icon{
+  height: 24px;
+  margin-bottom:7px;
+}
+.sidebar-paragraphs{
+  margin: 0;
+  font-size:10px;
+  font-family:Robota,arial;
+  
+}
+.thumbnail-row{
+  position:relative;
+}
+.video-time{
+  color:white;
+  background-color:black;
+  position : absolute;
+  bottom:10px;
+  right:8px;
+  font-family:Roboto,arial;
+  font-size:12px;
+  font-weight: 500;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:4px;
+  padding-bottom:4px;
+  border-radius:2px;
+}
+.notification-icon-container{
+  position:relative
+}
+.notification-count{
+  position:absolute;
+  top:-2px;
+  right:-5px;
+  right:0;
+  background-color: red;
+  color:white;
+  font-size:11px;
+  font-family: Roboto,arial;
+  padding-right:5px;
+  padding-left:5px;
+  padding-top:2px;
+  padding-bottom:2px;
+  border-radius:10px;
+  
+}
